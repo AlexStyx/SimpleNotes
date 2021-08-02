@@ -31,7 +31,7 @@ class FirebaseService {
     }
     
     func listenAuthentication(completion: @escaping ()->()) {
-        Auth.auth().addStateDidChangeListener { [weak self] auth, user in
+        Auth.auth().addStateDidChangeListener { auth, user in
             if user != nil {
                completion()
             }

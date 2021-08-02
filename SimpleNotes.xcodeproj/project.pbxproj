@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21A1C632763DDED2B588B3D4 /* Pods_SimpleNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2428EC124A8FF7F108CFC1ED /* Pods_SimpleNotes.framework */; };
+		5F50230426B815EB0057B391 /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F50230326B815EB0057B391 /* NoteTableViewController.swift */; };
 		5F72ED3326B7C61C00E4DBA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F72ED3226B7C61C00E4DBA8 /* GoogleService-Info.plist */; };
 		5F7D2D5626B7C9B700398FDA /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D2D5526B7C9B700398FDA /* FirebaseService.swift */; };
 		5F7D2D5826B7CC6600398FDA /* SugeIdentifiers .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D2D5726B7CC6600398FDA /* SugeIdentifiers .swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		2428EC124A8FF7F108CFC1ED /* Pods_SimpleNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F50230326B815EB0057B391 /* NoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
 		5F72ED3226B7C61C00E4DBA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F7D2D5526B7C9B700398FDA /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		5F7D2D5726B7CC6600398FDA /* SugeIdentifiers .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SugeIdentifiers .swift"; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F50230226B815CC0057B391 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				5F50230326B815EB0057B391 /* NoteTableViewController.swift */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
 		5F7D2D5926B7CCCE00398FDA /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,7 @@
 				5FC2CD1526B7B1430078FBD1 /* Auth */,
 				5F7D2D5B26B7CD9400398FDA /* Registration */,
 				5F7D2D5E26B7CDEF00398FDA /* Notes */,
+				5F50230226B815CC0057B391 /* Note */,
 				5F7D2D5A26B7CCE700398FDA /* Views */,
 				5FC2CD1426B7B1300078FBD1 /* Supporting Files */,
 			);
@@ -301,6 +312,7 @@
 				5F7D2D6326B7D91700398FDA /* User.swift in Sources */,
 				5F7D2D6526B7D93A00398FDA /* Note.swift in Sources */,
 				5F7D2D5626B7C9B700398FDA /* FirebaseService.swift in Sources */,
+				5F50230426B815EB0057B391 /* NoteTableViewController.swift in Sources */,
 				5F7D2D6826B7E15600398FDA /* NoteCell.swift in Sources */,
 				5FC2CD0326B7AC1D0078FBD1 /* SceneDelegate.swift in Sources */,
 				5F7D2D6026B7CE0C00398FDA /* NotesTableViewController.swift in Sources */,

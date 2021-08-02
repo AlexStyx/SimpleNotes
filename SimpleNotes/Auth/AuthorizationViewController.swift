@@ -17,6 +17,10 @@ class AuthorizationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDesign()
+    }
+        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         let firebaseService = FirebaseService.shared
         firebaseService.listenAuthentication { [weak self] in
             self?.performSegue(withIdentifier: SegueIdentifiers.notesSegue, sender: nil)
@@ -28,7 +32,6 @@ class AuthorizationViewController: UIViewController {
     }
 
     @IBAction private func logInButtonTapped(_ sender: UIButton) {
-        print("[ressed")
         guard
             let email = emailTextField.text,
             let password = passwordTextField.text,
@@ -43,14 +46,12 @@ class AuthorizationViewController: UIViewController {
         
         firebaseService.logIn(withEmail: email, password: password) { [weak self] userData, error in
             guard
-                let userData = userData,
+                userData != nil,
                 error == nil
             else {
                 self?.displayWarningMessage()
-                print("error occured")
                 return
             }
-            
             self?.performSegue(withIdentifier: SegueIdentifiers.notesSegue, sender: nil)
         }
         

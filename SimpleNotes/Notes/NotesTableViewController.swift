@@ -11,20 +11,18 @@ class NotesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.register(NoteCell.self, forCellReuseIdentifier: "reuseIdentifier")
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(), style: .plain, target: nil, action: nil)
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(), style: .plain, target: nil, action: nil)
     }
 
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 15
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! NoteCell
-        return cell
+        guard let noteCell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? NoteCell else { fatalError() }
+        return noteCell
     }
 }
