@@ -147,7 +147,7 @@
                                     <outlet property="dateLabel" destination="vME-U7-Qgf" id="QfK-S6-c49"/>
                                     <outlet property="headerLabel" destination="HRu-qN-hNj" id="BU0-2o-cDv"/>
                                     <outlet property="noteTextLabel" destination="fTM-HV-s2w" id="s65-NH-HXX"/>
-                                    <segue destination="V6g-4a-ohw" kind="show" id="0cq-th-JHT"/>
+                                    <segue destination="V6g-4a-ohw" kind="show" identifier="openNoteSegue" id="0cq-th-JHT"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -156,16 +156,26 @@
                             <outlet property="delegate" destination="WXW-7M-q6g" id="6R9-5D-UOn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Notes" id="HMk-Kl-dV0"/>
+                    <navigationItem key="navigationItem" title="Notes" id="HMk-Kl-dV0">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="jXo-oO-S00">
+                            <connections>
+                                <segue destination="V6g-4a-ohw" kind="show" identifier="newNoteSegue" id="cyA-eg-aX2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="viewModel" destination="HpB-gt-wEJ" id="F1k-fM-cj2"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H87-69-K4D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="HpB-gt-wEJ" customClass="NotesTableViewViewModel" customModule="SimpleNotes" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="2946" y="-281"/>
         </scene>
         <!--Note-->
         <scene sceneID="Olo-uF-1K4">
             <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="V6g-4a-ohw" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="V6g-4a-ohw" customClass="NoteTableViewController" customModule="SimpleNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="UTn-aD-l8i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -229,6 +239,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Note" id="IQ5-Sn-pUP"/>
+                    <connections>
+                        <outlet property="mainTextView" destination="esi-GE-Sck" id="Nl4-ZB-ISx"/>
+                        <outlet property="titleTextField" destination="d2O-wD-d2a" id="q4g-fj-2vw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UhA-LI-OTb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -345,6 +359,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="w6b-Of-g9F"/>
+        <segue reference="cyA-eg-aX2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">

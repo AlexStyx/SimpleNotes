@@ -14,6 +14,8 @@ class AuthorizationViewController: UIViewController {
     @IBOutlet weak private var passwordTextField: UITextField!
     @IBOutlet weak private var logInButton: UIButton!
     
+    let firebaseService = FirebaseService.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDesign()
@@ -21,7 +23,6 @@ class AuthorizationViewController: UIViewController {
         
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let firebaseService = FirebaseService.shared
         firebaseService.listenAuthentication { [weak self] in
             self?.performSegue(withIdentifier: SegueIdentifiers.notesSegue, sender: nil)
         }
@@ -42,16 +43,16 @@ class AuthorizationViewController: UIViewController {
             return
         }
         
-        let firebaseService = FirebaseService.shared
         
         firebaseService.logIn(withEmail: email, password: password) { [weak self] userData, error in
             guard
-                userData != nil,
+                let userData = userData,
                 error == nil
             else {
                 self?.displayWarningMessage()
                 return
             }
+            self?.firebaseService.userId = userData.user.uid
             self?.performSegue(withIdentifier: SegueIdentifiers.notesSegue, sender: nil)
         }
         

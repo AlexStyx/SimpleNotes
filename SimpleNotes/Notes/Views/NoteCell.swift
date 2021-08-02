@@ -9,19 +9,17 @@ import UIKit
 
 class NoteCell: UITableViewCell {
 
-    @IBOutlet weak var headerLabel: UILabel!
-    @IBOutlet weak var noteTextLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    var viewModel: NoteCellViewModelProtocol? {
+        didSet {
+            guard let viewModel = viewModel else { return }
+            headerLabel.text = viewModel.title
+            noteTextLabel.text = viewModel.text
+            dateLabel.text = viewModel.dateString
+            
+        }
+    }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    @IBOutlet weak private var headerLabel: UILabel!
+    @IBOutlet weak private var noteTextLabel: UILabel!
+    @IBOutlet weak private var dateLabel: UILabel!
 }

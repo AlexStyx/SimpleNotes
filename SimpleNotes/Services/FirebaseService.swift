@@ -15,6 +15,8 @@ class FirebaseService {
     private init () {}
 
     static let shared = FirebaseService()
+    
+    var userId: String = ""
 
     func createUser(withEmail email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> ()) {
         Auth.auth().createUser(withEmail: email, password: password, completion: completion)
@@ -24,18 +26,63 @@ class FirebaseService {
         Auth.auth().signIn(withEmail: email, password: password, completion: completion)
     }
     
+    func listenAuthentication(completion: @escaping ()->()) {
+        Auth.auth().addStateDidChangeListener { [weak self] auth, user in
+            if let user = user {
+                self?.userId = user.uid
+                completion()
+            }
+        }
+    }
+    
     func saveUser(userId: String, email: String) {
         let user = User(id: userId, email: email)
-        let reference = ref.child("users").child(userId)
+        self.userId = userId
+        let reference = buildReference(for: .user(userId: userId))
         reference.setValue(user.dataDictionary)
     }
     
-    func listenAuthentication(completion: @escaping ()->()) {
-        Auth.auth().addStateDidChangeListener { auth, user in
-            if user != nil {
-               completion()
+    func saveNote(title: String, text: String, date: Date) {
+        let reference = buildReference(for: .newNote)
+        guard let id = reference.key else { fatalError("no id") }
+        let note = Note(id: id, title: title, text: text, date: date)
+        reference.setValue(note.dataDict)
+    }
+    
+    func getNotes() -> [Note] {
+        let reference = buildReference(for: .notesList)
+        var notes = [Note]()
+        reference.observe(.value) { snapshot in
+            for child in snapshot.children {
+                if
+                    let snapshot = child as? DataSnapshot,
+                    let note = Note(snaphsot: snapshot) {
+                    notes.append(note)
+                }
             }
         }
+        return notes
+    }
+    
+    private func buildReference(for type: refType) -> DatabaseReference {
+        let reference = ref
+        switch type {
+        case .user(let id):
+            return reference.child("users").child(id)
+        case .existedNote(let noteId):
+            return reference.child("users").child(userId).child("notes").child(noteId)
+        case .newNote:
+            return reference.child("users").child(userId).child("notes").childByAutoId()
+        case .notesList :
+            return reference.child("users").child(userId).child("notes")
+        }
+    }
+    
+    enum refType {
+        case user(userId: String)
+        case existedNote(noteId: String)
+        case newNote
+        case notesList
     }
 }
 

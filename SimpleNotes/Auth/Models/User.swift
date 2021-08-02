@@ -12,6 +12,11 @@ struct User {
     let email: String
     
     var dataDictionary: [String: Any] {
-        ["id": id, "email": email]
+        [JSONKeys.id: id, JSONKeys.email: email]
+    }
+    
+    struct JSONKeys {
+        static let id = "id"
+        static let email = "email"
     }
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		21A1C632763DDED2B588B3D4 /* Pods_SimpleNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2428EC124A8FF7F108CFC1ED /* Pods_SimpleNotes.framework */; };
 		5F50230426B815EB0057B391 /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F50230326B815EB0057B391 /* NoteTableViewController.swift */; };
+		5F6147DD26B87BB500F9A026 /* NotesTableViewViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6147DC26B87BB500F9A026 /* NotesTableViewViewModelProtocol.swift */; };
+		5F6147DF26B87BFC00F9A026 /* NoteCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6147DE26B87BFC00F9A026 /* NoteCellViewModel.swift */; };
 		5F72ED3326B7C61C00E4DBA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F72ED3226B7C61C00E4DBA8 /* GoogleService-Info.plist */; };
 		5F7D2D5626B7C9B700398FDA /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D2D5526B7C9B700398FDA /* FirebaseService.swift */; };
 		5F7D2D5826B7CC6600398FDA /* SugeIdentifiers .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D2D5726B7CC6600398FDA /* SugeIdentifiers .swift */; };
@@ -28,6 +30,8 @@
 /* Begin PBXFileReference section */
 		2428EC124A8FF7F108CFC1ED /* Pods_SimpleNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F50230326B815EB0057B391 /* NoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
+		5F6147DC26B87BB500F9A026 /* NotesTableViewViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewViewModelProtocol.swift; sourceTree = "<group>"; };
+		5F6147DE26B87BFC00F9A026 /* NoteCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellViewModel.swift; sourceTree = "<group>"; };
 		5F72ED3226B7C61C00E4DBA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F7D2D5526B7C9B700398FDA /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		5F7D2D5726B7CC6600398FDA /* SugeIdentifiers .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SugeIdentifiers .swift"; sourceTree = "<group>"; };
@@ -63,9 +67,51 @@
 		5F50230226B815CC0057B391 /* Note */ = {
 			isa = PBXGroup;
 			children = (
-				5F50230326B815EB0057B391 /* NoteTableViewController.swift */,
+				5F6147E026B880E800F9A026 /* Models */,
+				5F6147E326B8811D00F9A026 /* Controllers */,
 			);
 			path = Note;
+			sourceTree = "<group>";
+		};
+		5F6147D926B87B6200F9A026 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5F6147DC26B87BB500F9A026 /* NotesTableViewViewModelProtocol.swift */,
+				5F6147DE26B87BFC00F9A026 /* NoteCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5F6147E026B880E800F9A026 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5F7D2D6426B7D93A00398FDA /* Note.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5F6147E126B880FA00F9A026 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5F7D2D6226B7D91700398FDA /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5F6147E226B880FF00F9A026 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5FC2CD0426B7AC1D0078FBD1 /* AuthorizationViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5F6147E326B8811D00F9A026 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F50230326B815EB0057B391 /* NoteTableViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		5F7D2D5926B7CCCE00398FDA /* Services */ = {
@@ -95,24 +141,16 @@
 		5F7D2D5E26B7CDEF00398FDA /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				5F7D2D5F26B7CE0C00398FDA /* NotesTableViewController.swift */,
+				5F6147D926B87B6200F9A026 /* ViewModels */,
 				5F7D2D6626B7E13200398FDA /* Views */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
 		};
-		5F7D2D6126B7D90900398FDA /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				5F7D2D6226B7D91700398FDA /* User.swift */,
-				5F7D2D6426B7D93A00398FDA /* Note.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		5F7D2D6626B7E13200398FDA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5F7D2D5F26B7CE0C00398FDA /* NotesTableViewController.swift */,
 				5F7D2D6726B7E15600398FDA /* NoteCell.swift */,
 			);
 			path = Views;
@@ -142,7 +180,6 @@
 				5FC2CD0E26B7AC1F0078FBD1 /* Info.plist */,
 				5F72ED3226B7C61C00E4DBA8 /* GoogleService-Info.plist */,
 				5F7D2D5926B7CCCE00398FDA /* Services */,
-				5F7D2D6126B7D90900398FDA /* Models */,
 				5FC2CD1526B7B1430078FBD1 /* Auth */,
 				5F7D2D5B26B7CD9400398FDA /* Registration */,
 				5F7D2D5E26B7CDEF00398FDA /* Notes */,
@@ -168,7 +205,8 @@
 		5FC2CD1526B7B1430078FBD1 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				5FC2CD0426B7AC1D0078FBD1 /* AuthorizationViewController.swift */,
+				5F6147E226B880FF00F9A026 /* Controllers */,
+				5F6147E126B880FA00F9A026 /* Models */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -308,6 +346,7 @@
 				5F7D2D5D26B7CDCB00398FDA /* RegistrationViewController.swift in Sources */,
 				5F7D2D5826B7CC6600398FDA /* SugeIdentifiers .swift in Sources */,
 				5FC2CD0526B7AC1D0078FBD1 /* AuthorizationViewController.swift in Sources */,
+				5F6147DD26B87BB500F9A026 /* NotesTableViewViewModelProtocol.swift in Sources */,
 				5FC2CD0126B7AC1D0078FBD1 /* AppDelegate.swift in Sources */,
 				5F7D2D6326B7D91700398FDA /* User.swift in Sources */,
 				5F7D2D6526B7D93A00398FDA /* Note.swift in Sources */,
@@ -315,6 +354,7 @@
 				5F50230426B815EB0057B391 /* NoteTableViewController.swift in Sources */,
 				5F7D2D6826B7E15600398FDA /* NoteCell.swift in Sources */,
 				5FC2CD0326B7AC1D0078FBD1 /* SceneDelegate.swift in Sources */,
+				5F6147DF26B87BFC00F9A026 /* NoteCellViewModel.swift in Sources */,
 				5F7D2D6026B7CE0C00398FDA /* NotesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
