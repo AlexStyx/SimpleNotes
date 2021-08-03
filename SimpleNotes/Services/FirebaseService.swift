@@ -10,14 +10,14 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class FirebaseService {
-
+    
     private var ref = Database.database().reference()
     private init () {}
-
+    
     static let shared = FirebaseService()
     
     var userId: String = ""
-
+    
     func createUser(withEmail email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> ()) {
         Auth.auth().createUser(withEmail: email, password: password, completion: completion)
     }
@@ -49,22 +49,22 @@ class FirebaseService {
         reference.setValue(note.dataDict)
     }
     
-    func getNotes() -> [Note] {
+    func getNotes(completion: @escaping ([Note]) -> ()) {
         let reference = buildReference(for: .notesList)
-        var notes = [Note]()
         reference.observe(.value) { snapshot in
+            var notes = [Note]()
             for child in snapshot.children {
                 if
                     let snapshot = child as? DataSnapshot,
                     let note = Note(snaphsot: snapshot) {
                     notes.append(note)
+                    completion(notes)
                 }
             }
         }
-        return notes
     }
     
-    private func buildReference(for type: refType) -> DatabaseReference {
+    func buildReference(for type: refType) -> DatabaseReference {
         let reference = ref
         switch type {
         case .user(let id):

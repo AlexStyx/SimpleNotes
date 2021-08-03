@@ -6,10 +6,19 @@
 //
 
 import UIKit
+import Firebase
 
 class NotesTableViewController: UITableViewController {
     
-    @IBOutlet var viewModel: NotesTableViewViewModel!
+    @IBOutlet var viewModel: NotesTableViewViewModel! {
+        willSet {
+            newValue.onCompletion = { [weak self] in
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

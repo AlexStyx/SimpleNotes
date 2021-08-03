@@ -16,6 +16,7 @@ class NoteTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         if let note = note {
+            print(note.title)
             titleTextField.text = note.title
             mainTextView.text = note.text
         }

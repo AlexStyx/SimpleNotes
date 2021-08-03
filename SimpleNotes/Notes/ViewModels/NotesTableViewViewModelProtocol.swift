@@ -13,32 +13,32 @@ protocol NotesTableViewViewModelProtocol {
 }
 
 class NotesTableViewViewModel: NSObject, NotesTableViewViewModelProtocol {
-    private var notes: [Note]
+    private var notes: [Note] = [] {
+        didSet {
+            onCompletion?()
+        }
+    }
+    
+    var onCompletion: (()->())?
     
     func noteCellViewModel(for indexPath: IndexPath) -> NoteCellViewModelProtocol {
-        updateNotes()
         let note = notes[indexPath.row]
         let noteCellViewModel = NoteCellViewModel(note: note)
         return noteCellViewModel
     }
     
     func numberOfRows() -> Int {
-        updateNotes()
         return notes.count
     }
     
     func note(for indexPath: IndexPath) -> Note {
-        updateNotes()
         return notes[indexPath.row]
     }
     
     override init() {
-        notes = FirebaseService.shared.getNotes()
         super.init()
+        FirebaseService.shared.getNotes { [weak self] notes in
+            self?.notes = notes
+        }
     }
-    
-    private func updateNotes() {
-        notes = FirebaseService.shared.getNotes()
-    }
-    
 }
