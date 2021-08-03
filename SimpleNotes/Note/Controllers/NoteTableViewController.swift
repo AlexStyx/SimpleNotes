@@ -10,18 +10,13 @@ import UIKit
 class NoteTableViewController: UITableViewController {
     
     var note: Note?
-    var usageCase: UsageCase = .creating {
-        didSet {
-            print(usageCase)
-        }
-    }
+    var usageCase: UsageCase = .creating
     
-    @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var mainTextView: UITextView!
+    @IBOutlet weak private var titleTextField: UITextField!
+    @IBOutlet weak private var mainTextView: UITextView!
     
     override func viewDidLoad() {
         if let note = note {
-            print(note.title)
             titleTextField.text = note.title
             mainTextView.text = note.text
         }
@@ -51,6 +46,7 @@ class NoteTableViewController: UITableViewController {
         let text = titleAndText.text
         note.title = title
         note.text = text
+        note.date = Date()
         FirebaseService.shared.updateNote(note: note)
     }
     

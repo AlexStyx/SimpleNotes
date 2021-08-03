@@ -39,7 +39,7 @@ class NotesTableViewViewModel: NSObject, NotesTableViewViewModelProtocol {
     override init() {
         super.init()
         FirebaseService.shared.getNotes { [weak self] notes in
-            self?.notes = notes
+            self?.notes = notes.sorted { $0.date < $1.date }
         }
     }
 }

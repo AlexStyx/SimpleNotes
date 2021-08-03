@@ -12,7 +12,7 @@ struct Note {
     let id: String
     var title: String
     var text: String
-    let date: Date
+    var date: Date
     let reference: DatabaseReference?
     var dateString: String {
         let calendar = Calendar.current
