@@ -10,4 +10,6 @@ import Foundation
 class SegueIdentifiers {
     static let notesSegue = "notesSegue"
     static let registerSegue = "registerSegue"
+    static let openNoteSegue = "openNoteSegue"
+    static let newNoteSegue = "newNoteSegue"
 }

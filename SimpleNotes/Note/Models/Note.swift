@@ -10,8 +10,8 @@ import Firebase
 
 struct Note {
     let id: String
-    let title: String
-    let text: String
+    var title: String
+    var text: String
     let date: Date
     let reference: DatabaseReference?
     var dateString: String {

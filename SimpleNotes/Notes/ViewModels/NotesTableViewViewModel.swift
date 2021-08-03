@@ -13,13 +13,14 @@ protocol NotesTableViewViewModelProtocol {
 }
 
 class NotesTableViewViewModel: NSObject, NotesTableViewViewModelProtocol {
+    
+    var onCompletion: (()->())?
+    
     private var notes: [Note] = [] {
         didSet {
             onCompletion?()
         }
     }
-    
-    var onCompletion: (()->())?
     
     func noteCellViewModel(for indexPath: IndexPath) -> NoteCellViewModelProtocol {
         let note = notes[indexPath.row]

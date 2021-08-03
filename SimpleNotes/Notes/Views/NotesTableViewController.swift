@@ -44,11 +44,12 @@ class NotesTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if
-            segue.identifier == SegueIdentifiers.notesSegue,
+            segue.identifier == SegueIdentifiers.openNoteSegue,
             let noteViewController = segue.destination as? NoteTableViewController,
             let indexPath = tableView.indexPathForSelectedRow {
             let note = viewModel.note(for: indexPath)
             noteViewController.note = note
+            noteViewController.usageCase = .editing
         }
     }
 }

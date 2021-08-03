@@ -49,6 +49,11 @@ class FirebaseService {
         reference.setValue(note.dataDict)
     }
     
+    func updateNote(note: Note) {
+        let reference = note.reference
+        reference?.updateChildValues(note.dataDict)
+    }
+    
     func getNotes(completion: @escaping ([Note]) -> ()) {
         let reference = buildReference(for: .notesList)
         reference.observe(.value) { snapshot in
@@ -64,7 +69,7 @@ class FirebaseService {
         }
     }
     
-    func buildReference(for type: refType) -> DatabaseReference {
+    private func buildReference(for type: refType) -> DatabaseReference {
         let reference = ref
         switch type {
         case .user(let id):
