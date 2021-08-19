@@ -12,4 +12,5 @@ class SegueIdentifiers {
     static let registerSegue = "registerSegue"
     static let openNoteSegue = "openNoteSegue"
     static let newNoteSegue = "newNoteSegue"
+    static let unwindToAuth = "unwindToAuth"
 }

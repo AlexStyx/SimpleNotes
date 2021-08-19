@@ -9,15 +9,18 @@ import UIKit
 
 class RegistrationViewController: UIViewController {
 
-
-    @IBOutlet weak var warningLabel: UILabel!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak private var warningLabel: UILabel!
+    @IBOutlet weak private var emailTextField: UITextField!
+    @IBOutlet weak private var passwordTextField: UITextField!
+    @IBOutlet weak var repeatPasswordTextField: UITextField!
+    @IBOutlet weak private var signUpButton: UIButton!
     
+    private lazy var scrollViewAndKeyboardHelper = ScrollViewAndKeyboardHelper(scrollView: scrollView, view: view)
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDesign()
+        scrollViewAndKeyboardHelper.addKeyboardNotifications()
     }
 
     @IBAction private func signUpButtonPressed(_ sender: UIButton) {
@@ -25,10 +28,11 @@ class RegistrationViewController: UIViewController {
         guard
             let email = emailTextField.text,
             let password = passwordTextField.text,
+            let repeatedPassword = repeatPasswordTextField.text,
             email != "",
-            password != ""
+            password != "",
+            password == repeatedPassword
         else {
-            displayWarningMessage()
             return
         }
         
@@ -37,17 +41,12 @@ class RegistrationViewController: UIViewController {
                 let userData = userData,
                 error == nil
             else {
-                self?.displayWarningMessage()
                 return
             }
             let userId = userData.user.uid
             firebaseService.saveUser(userId: userId, email: email)
             self?.performSegue(withIdentifier: SegueIdentifiers.notesSegue, sender: nil)
         }
-    }
-    
-    private func displayWarningMessage() {
-        
     }
     
     private func setupDesign() {

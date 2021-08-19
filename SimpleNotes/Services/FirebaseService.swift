@@ -26,6 +26,14 @@ class FirebaseService {
         Auth.auth().signIn(withEmail: email, password: password, completion: completion)
     }
     
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     func listenAuthentication(completion: @escaping ()->()) {
         Auth.auth().addStateDidChangeListener { [weak self] auth, user in
             if let user = user {

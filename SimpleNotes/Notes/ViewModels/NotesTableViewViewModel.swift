@@ -10,30 +10,44 @@ import Foundation
 protocol NotesTableViewViewModelProtocol {
     func noteCellViewModel(for indexPath: IndexPath) -> NoteCellViewModelProtocol
     func numberOfRows() -> Int
+    func filterNotes(_ searchText: String)
 }
-
 class NotesTableViewViewModel: NSObject, NotesTableViewViewModelProtocol {
-    
+        
     var onCompletion: (()->())?
     
-    private var notes: [Note] = [] {
+    var isSearching = false
+    
+    private var notes = [Note]() {
         didSet {
             onCompletion?()
         }
     }
     
+    private var filteredNotes = [Note]() {
+        didSet {
+            onCompletion?()
+        }
+    }
+
     func noteCellViewModel(for indexPath: IndexPath) -> NoteCellViewModelProtocol {
-        let note = notes[indexPath.row]
+        let note = isSearching ? filteredNotes[indexPath.row] : notes[indexPath.row]
         let noteCellViewModel = NoteCellViewModel(note: note)
         return noteCellViewModel
     }
     
     func numberOfRows() -> Int {
-        return notes.count
+        isSearching ? filteredNotes.count : notes.count
     }
     
     func note(for indexPath: IndexPath) -> Note {
-        return notes[indexPath.row]
+        isSearching ? filteredNotes[indexPath.row] : notes[indexPath.row]
+    }
+    
+    func filterNotes(_ searchText: String) {
+        filteredNotes = notes.filter {
+            $0.title.lowercased().contains(searchText.lowercased()) || $0.text.lowercased().contains(searchText.lowercased())
+        }
     }
     
     override init() {

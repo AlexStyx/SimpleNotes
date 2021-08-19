@@ -13,12 +13,13 @@
 		5F6147DF26B87BFC00F9A026 /* NoteCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6147DE26B87BFC00F9A026 /* NoteCellViewModel.swift */; };
 		5F72ED3326B7C61C00E4DBA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F72ED3226B7C61C00E4DBA8 /* GoogleService-Info.plist */; };
 		5F7D2D5626B7C9B700398FDA /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D2D5526B7C9B700398FDA /* FirebaseService.swift */; };
-		5F7D2D5826B7CC6600398FDA /* SugeIdentifiers .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D2D5726B7CC6600398FDA /* SugeIdentifiers .swift */; };
+		5F7D2D5826B7CC6600398FDA /* SugueIdentifiers .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D2D5726B7CC6600398FDA /* SugueIdentifiers .swift */; };
 		5F7D2D5D26B7CDCB00398FDA /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D2D5C26B7CDCB00398FDA /* RegistrationViewController.swift */; };
 		5F7D2D6026B7CE0C00398FDA /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D2D5F26B7CE0C00398FDA /* NotesTableViewController.swift */; };
 		5F7D2D6326B7D91700398FDA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D2D6226B7D91700398FDA /* User.swift */; };
 		5F7D2D6526B7D93A00398FDA /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D2D6426B7D93A00398FDA /* Note.swift */; };
 		5F7D2D6826B7E15600398FDA /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D2D6726B7E15600398FDA /* NoteCell.swift */; };
+		5F82689B26CE74760017BD27 /* ScrollViewAndKeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F82689A26CE74760017BD27 /* ScrollViewAndKeyboardHelper.swift */; };
 		5FC2CD0126B7AC1D0078FBD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC2CD0026B7AC1D0078FBD1 /* AppDelegate.swift */; };
 		5FC2CD0326B7AC1D0078FBD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC2CD0226B7AC1D0078FBD1 /* SceneDelegate.swift */; };
 		5FC2CD0526B7AC1D0078FBD1 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC2CD0426B7AC1D0078FBD1 /* AuthorizationViewController.swift */; };
@@ -34,12 +35,13 @@
 		5F6147DE26B87BFC00F9A026 /* NoteCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellViewModel.swift; sourceTree = "<group>"; };
 		5F72ED3226B7C61C00E4DBA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F7D2D5526B7C9B700398FDA /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
-		5F7D2D5726B7CC6600398FDA /* SugeIdentifiers .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SugeIdentifiers .swift"; sourceTree = "<group>"; };
+		5F7D2D5726B7CC6600398FDA /* SugueIdentifiers .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SugueIdentifiers .swift"; sourceTree = "<group>"; };
 		5F7D2D5C26B7CDCB00398FDA /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		5F7D2D5F26B7CE0C00398FDA /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
 		5F7D2D6226B7D91700398FDA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5F7D2D6426B7D93A00398FDA /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		5F7D2D6726B7E15600398FDA /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		5F82689A26CE74760017BD27 /* ScrollViewAndKeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewAndKeyboardHelper.swift; sourceTree = "<group>"; };
 		5FC2CCFD26B7AC1D0078FBD1 /* SimpleNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC2CD0026B7AC1D0078FBD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FC2CD0226B7AC1D0078FBD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5F82689926CE73570017BD27 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5F7D2D5726B7CC6600398FDA /* SugueIdentifiers .swift */,
+				5F82689A26CE74760017BD27 /* ScrollViewAndKeyboardHelper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		5FC2CCF426B7AC1D0078FBD1 = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +190,7 @@
 			children = (
 				5FC2CD0E26B7AC1F0078FBD1 /* Info.plist */,
 				5F72ED3226B7C61C00E4DBA8 /* GoogleService-Info.plist */,
+				5F82689926CE73570017BD27 /* Utils */,
 				5F7D2D5926B7CCCE00398FDA /* Services */,
 				5FC2CD1526B7B1430078FBD1 /* Auth */,
 				5F7D2D5B26B7CD9400398FDA /* Registration */,
@@ -197,7 +209,6 @@
 				5FC2CD0226B7AC1D0078FBD1 /* SceneDelegate.swift */,
 				5FC2CD0926B7AC1F0078FBD1 /* Assets.xcassets */,
 				5FC2CD0B26B7AC1F0078FBD1 /* LaunchScreen.storyboard */,
-				5F7D2D5726B7CC6600398FDA /* SugeIdentifiers .swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -344,8 +355,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F7D2D5D26B7CDCB00398FDA /* RegistrationViewController.swift in Sources */,
-				5F7D2D5826B7CC6600398FDA /* SugeIdentifiers .swift in Sources */,
+				5F7D2D5826B7CC6600398FDA /* SugueIdentifiers .swift in Sources */,
 				5FC2CD0526B7AC1D0078FBD1 /* AuthorizationViewController.swift in Sources */,
+				5F82689B26CE74760017BD27 /* ScrollViewAndKeyboardHelper.swift in Sources */,
 				5F6147DD26B87BB500F9A026 /* NotesTableViewViewModel.swift in Sources */,
 				5FC2CD0126B7AC1D0078FBD1 /* AppDelegate.swift in Sources */,
 				5F7D2D6326B7D91700398FDA /* User.swift in Sources */,
