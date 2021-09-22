@@ -18,12 +18,30 @@ class FirebaseService {
     
     var userId: String = ""
     
-    func createUser(withEmail email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> ()) {
-        Auth.auth().createUser(withEmail: email, password: password, completion: completion)
+    func createUser(withEmail email: String, password: String, succsessCompletion: @escaping (() -> ()), warningCompletion: @escaping () -> ()) {
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] userData, error in
+            guard let userData = userData,
+                  error == nil
+            else {
+                warningCompletion()
+                return
+            }
+            let userId = userData.user.uid
+            self?.saveUser(userId: userId, email: email)
+            succsessCompletion()
+        }
     }
     
-    func logIn(withEmail email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> ()) {
-        Auth.auth().signIn(withEmail: email, password: password, completion: completion)
+    func logIn(withEmail email: String, password: String, warningComplection: @escaping () -> ()) {
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] userData, error in
+            guard let userData = userData,
+                  error == nil
+            else {
+                warningComplection()
+                return
+            }
+            self?.userId = userData.user.uid
+        }
     }
     
     func signOut() {

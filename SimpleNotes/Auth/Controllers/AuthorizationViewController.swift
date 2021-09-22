@@ -31,9 +31,19 @@ class AuthorizationViewController: UIViewController {
         }
     }
     
-    private func displayWarningMessage(with message: String) {
+    @IBAction func unwindSegue(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {}
+    
+    private func displayWarningMessage(errorType: AuthErrorType) {
+        var message: String
+        switch errorType {
+        case .incorrectInput:
+            message = "Input incorrect password or email"
+        case .passwordMismatch:
+            message = "Password missmatch"
+        case .serverError:
+            message = "Server error"
+        }
         warningLabel.text = message
-        
         UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut) {
             [weak self] in
             self?.warningLabel.alpha = 1
@@ -43,30 +53,24 @@ class AuthorizationViewController: UIViewController {
     }
     
     @IBAction private func logInButtonTapped(_ sender: UIButton) {
+        let (email, password) = checkUserInput()
+        firebaseService.logIn(withEmail: email, password: password) { [weak self] in
+            self?.displayWarningMessage(errorType: .serverError)
+        }
+    }
+    
+    private func checkUserInput() -> (email: String, password: String) {
         guard
             let email = emailTextField.text,
             let password = passwordTextField.text,
             email != "",
             password != ""
         else {
-            displayWarningMessage(with: "Wrong password or email")
-            return
+            displayWarningMessage(errorType: .incorrectInput)
+            return ("", "")
         }
-        
-        firebaseService.logIn(withEmail: email, password: password) { [weak self] userData, error in
-            guard
-                let userData = userData,
-                error == nil
-            else {
-                self?.displayWarningMessage(with: "Wrong password or email")
-                return
-            }
-            self?.firebaseService.userId = userData.user.uid
-        }
-        
+        return (email, password)
     }
-    
-    @IBAction func unwindSegue(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {}
     
     private func setupDesign() {
         emailTextField.layer.cornerRadius = 15

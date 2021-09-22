@@ -26,28 +26,28 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NfG-q7-WZD">
-                                        <rect key="frame" x="107" y="295" width="200" height="228.5"/>
+                                        <rect key="frame" x="105" y="295" width="204" height="228.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Warning label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lpa-xl-aQC">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="204" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dfC-6D-gP3">
-                                                <rect key="frame" x="0.0" y="40.5" width="200" height="34"/>
-                                                <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                            </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZdK-GW-MtA">
-                                                <rect key="frame" x="0.0" y="94.5" width="200" height="34"/>
+                                                <rect key="frame" x="0.0" y="40.5" width="204" height="34"/>
                                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dfC-6D-gP3">
+                                                <rect key="frame" x="0.0" y="94.5" width="204" height="34"/>
+                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0D-yu-Ijd">
-                                                <rect key="frame" x="0.0" y="148.5" width="200" height="30"/>
+                                                <rect key="frame" x="0.0" y="148.5" width="204" height="30"/>
                                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                                 <state key="normal" title="Log In">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -57,22 +57,19 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLJ-oQ-CPB">
-                                                <rect key="frame" x="0.0" y="198.5" width="200" height="30"/>
+                                                <rect key="frame" x="0.0" y="198.5" width="204" height="30"/>
                                                 <state key="normal" title="Sign Up"/>
                                                 <connections>
                                                     <segue destination="TYg-5B-NR6" kind="show" identifier="registerSegue" id="bxm-It-gkN"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="ulI-Mf-VgM"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="NfG-q7-WZD" firstAttribute="top" secondItem="z4Z-FB-h2Z" secondAttribute="bottom" constant="45" id="L2y-7b-Sc3"/>
-                                    <constraint firstItem="NfG-q7-WZD" firstAttribute="leading" secondItem="T8M-98-n9m" secondAttribute="leading" constant="107" id="Zso-1q-lfU"/>
-                                    <constraint firstAttribute="trailing" secondItem="NfG-q7-WZD" secondAttribute="trailing" constant="107" id="ni8-Xi-DUj"/>
+                                    <constraint firstItem="NfG-q7-WZD" firstAttribute="leading" secondItem="T8M-98-n9m" secondAttribute="leading" constant="105" id="Zso-1q-lfU"/>
+                                    <constraint firstAttribute="trailing" secondItem="NfG-q7-WZD" secondAttribute="trailing" constant="105" id="ni8-Xi-DUj"/>
                                     <constraint firstItem="z4Z-FB-h2Z" firstAttribute="centerX" secondItem="T8M-98-n9m" secondAttribute="centerX" id="obd-a6-bey"/>
                                     <constraint firstItem="NfG-q7-WZD" firstAttribute="centerY" secondItem="T8M-98-n9m" secondAttribute="centerY" id="zDK-Dv-jhi"/>
                                     <constraint firstItem="NfG-q7-WZD" firstAttribute="centerX" secondItem="T8M-98-n9m" secondAttribute="centerX" id="zHB-iq-JWP"/>
@@ -287,34 +284,34 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="y1B-N6-S8j">
-                                        <rect key="frame" x="107" y="268" width="200" height="282.5"/>
+                                        <rect key="frame" x="105" y="268" width="204" height="282.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warning label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBA-Ze-3ni">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="204" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZhG-g8-4Ra">
-                                                <rect key="frame" x="0.0" y="40.5" width="200" height="34"/>
+                                                <rect key="frame" x="0.0" y="40.5" width="204" height="34"/>
                                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jky-tv-00m">
-                                                <rect key="frame" x="0.0" y="94.5" width="200" height="34"/>
+                                                <rect key="frame" x="0.0" y="94.5" width="204" height="34"/>
                                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="repeat password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jyO-Sg-mjv">
-                                                <rect key="frame" x="0.0" y="148.5" width="200" height="34"/>
+                                                <rect key="frame" x="0.0" y="148.5" width="204" height="34"/>
                                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmG-2f-ZRR">
-                                                <rect key="frame" x="0.0" y="202.5" width="200" height="30"/>
+                                                <rect key="frame" x="0.0" y="202.5" width="204" height="30"/>
                                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                                 <state key="normal" title="Sign Up">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -324,16 +321,13 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2v-Tj-5v3">
-                                                <rect key="frame" x="0.0" y="252.5" width="200" height="30"/>
+                                                <rect key="frame" x="0.0" y="252.5" width="204" height="30"/>
                                                 <state key="normal" title="Log In"/>
                                                 <connections>
                                                     <segue destination="hpU-2P-7xC" kind="unwind" unwindAction="unwindSegueFor:towards:" id="DgF-z1-n4S"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="cgv-Q1-2mA"/>
-                                        </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmH-c0-hCc">
                                         <rect key="frame" x="152" y="186" width="110" height="37"/>
@@ -345,8 +339,10 @@
                                 <constraints>
                                     <constraint firstItem="y1B-N6-S8j" firstAttribute="centerX" secondItem="HKb-6C-L1A" secondAttribute="centerX" id="8XI-J2-MvJ"/>
                                     <constraint firstItem="VmH-c0-hCc" firstAttribute="centerX" secondItem="y1B-N6-S8j" secondAttribute="centerX" id="MsG-y5-QWC"/>
+                                    <constraint firstItem="y1B-N6-S8j" firstAttribute="leading" secondItem="HKb-6C-L1A" secondAttribute="leading" constant="105" id="SMO-o9-5XS"/>
                                     <constraint firstItem="y1B-N6-S8j" firstAttribute="centerY" secondItem="HKb-6C-L1A" secondAttribute="centerY" id="SZx-E9-ULu"/>
                                     <constraint firstItem="y1B-N6-S8j" firstAttribute="top" secondItem="VmH-c0-hCc" secondAttribute="bottom" constant="45" id="bmc-BR-lyF"/>
+                                    <constraint firstAttribute="trailing" secondItem="y1B-N6-S8j" secondAttribute="trailing" constant="105" id="rif-9M-6hU"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="RLF-6s-iXx"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="36J-iE-dzW"/>
@@ -398,7 +394,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="L1U-OM-t0a"/>
+        <segue reference="zsr-FW-zwz"/>
         <segue reference="cyA-eg-aX2"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21A1C632763DDED2B588B3D4 /* Pods_SimpleNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2428EC124A8FF7F108CFC1ED /* Pods_SimpleNotes.framework */; };
+		5F4EB7D326CEF23A005064B9 /* AuthErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4EB7D226CEF23A005064B9 /* AuthErrorType.swift */; };
 		5F50230426B815EB0057B391 /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F50230326B815EB0057B391 /* NoteTableViewController.swift */; };
 		5F6147DD26B87BB500F9A026 /* NotesTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6147DC26B87BB500F9A026 /* NotesTableViewViewModel.swift */; };
 		5F6147DF26B87BFC00F9A026 /* NoteCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6147DE26B87BFC00F9A026 /* NoteCellViewModel.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		2428EC124A8FF7F108CFC1ED /* Pods_SimpleNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F4EB7D226CEF23A005064B9 /* AuthErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorType.swift; sourceTree = "<group>"; };
 		5F50230326B815EB0057B391 /* NoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
 		5F6147DC26B87BB500F9A026 /* NotesTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewViewModel.swift; sourceTree = "<group>"; };
 		5F6147DE26B87BFC00F9A026 /* NoteCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellViewModel.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			children = (
 				5F7D2D5726B7CC6600398FDA /* SugueIdentifiers .swift */,
 				5F82689A26CE74760017BD27 /* ScrollViewAndKeyboardHelper.swift */,
+				5F4EB7D226CEF23A005064B9 /* AuthErrorType.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				5F7D2D5826B7CC6600398FDA /* SugueIdentifiers .swift in Sources */,
 				5FC2CD0526B7AC1D0078FBD1 /* AuthorizationViewController.swift in Sources */,
 				5F82689B26CE74760017BD27 /* ScrollViewAndKeyboardHelper.swift in Sources */,
+				5F4EB7D326CEF23A005064B9 /* AuthErrorType.swift in Sources */,
 				5F6147DD26B87BB500F9A026 /* NotesTableViewViewModel.swift in Sources */,
 				5FC2CD0126B7AC1D0078FBD1 /* AppDelegate.swift in Sources */,
 				5F7D2D6326B7D91700398FDA /* User.swift in Sources */,
